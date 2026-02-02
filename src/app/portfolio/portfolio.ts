@@ -92,7 +92,6 @@ export class Portfolio {
 
   setActiveSection(section: string): void {
     this.activeSection = section;
-    // Scroll to top when changing sections
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
