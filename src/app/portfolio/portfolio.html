@@ -1,1 +1,221 @@
-<p>portfolio works!</p>
+<div class="portfolio">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="brand-text">YourName</span>
+      <span class="brand-subtitle">Angular Developer</span>
+    </div>
+    <div class="nav-links">
+      <a 
+        *ngFor="let section of ['about', 'experience', 'projects', 'skills', 'contact']"
+        [class.active]="activeSection === section"
+        (click)="setActiveSection(section)"
+      >
+        {{ section | titlecase }}
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Building Modern Web
+        <span class="highlight">Experiences</span>
+      </h1>
+      <p class="hero-description">
+        Full-stack developer specializing in Angular, TypeScript, and scalable web applications
+      </p>
+      <div class="hero-cta">
+        <button class="btn-primary" (click)="setActiveSection('contact')">Get In Touch</button>
+        <button class="btn-secondary" (click)="setActiveSection('projects')">View Projects</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section class="section about-section" *ngIf="activeSection === 'about'">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image">
+          <img src="assets/images/profile.jpg" alt="Profile Picture" class="profile-pic">
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span>Available for work</span>
+          </div>
+        </div>
+        
+        <div class="about-content">
+          <h2 class="section-title">About Me</h2>
+          <div class="about-text">
+            <p>
+              Hi! I'm a passionate Angular developer with {{ yearsExperience }}+ years of experience 
+              building modern, scalable web applications. I specialize in creating seamless user experiences 
+              and writing clean, maintainable code.
+            </p>
+            <p>
+              My expertise spans the full development lifecycle, from designing component architectures 
+              to implementing complex state management solutions. I'm committed to staying current with 
+              the latest web technologies and best practices.
+            </p>
+            <p>
+              When I'm not coding, you'll find me contributing to open source projects, writing technical 
+              blog posts, or exploring new frameworks and tools to expand my skill set.
+            </p>
+          </div>
+
+          <div class="quick-stats">
+            <div class="stat">
+              <div class="stat-number">{{ projects.length }}+</div>
+              <div class="stat-label">Projects Completed</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">{{ yearsExperience }}+</div>
+              <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">15+</div>
+              <div class="stat-label">Technologies</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section experience-section" *ngIf="activeSection === 'experience'">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let exp of experience">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3>{{ exp.role }}</h3>
+              <span class="timeline-period">{{ exp.period }}</span>
+            </div>
+            <div class="timeline-company">{{ exp.company }}</div>
+            <p class="timeline-description">{{ exp.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section projects-section" *ngIf="activeSection === 'projects'">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card" *ngFor="let project of projects">
+          <div class="project-header">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <span class="project-year">{{ project.year }}</span>
+          </div>
+          <p class="project-tech">{{ project.tech }}</p>
+          <p class="project-description">{{ project.description }}</p>
+          <a [href]="project.link" target="_blank" class="project-link">
+            View Project →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="section skills-section" *ngIf="activeSection === 'skills'">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-category" *ngFor="let skillGroup of skills">
+          <h3 class="skill-category-title">{{ skillGroup.category }}</h3>
+          <div class="skill-tags">
+            <span class="skill-tag" *ngFor="let skill of skillGroup.items">
+              {{ skill }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section contact-section" *ngIf="activeSection === 'contact'">
+    <div class="container">
+      <h2 class="section-title">Let's Work Together</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p class="contact-intro">
+            I'm always interested in hearing about new projects and opportunities. 
+            Whether you have a question or just want to say hi, feel free to reach out!
+          </p>
+          
+          <div class="contact-methods">
+            <div class="contact-method">
+              <div class="contact-label">Email</div>
+              <a href="mailto:your.email@example.com" class="contact-value">
+                your.email@example.com
+              </a>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Your City, Country</div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="contact-label">Phone</div>
+              <a href="tel:+1234567890" class="contact-value">
+                +1 (234) 567-890
+              </a>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank" class="social-link">
+              <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-link">
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://twitter.com/yourusername" target="_blank" class="social-link">
+              <span>Twitter</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-form-container">
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; {{ currentYear }} Your Name. All rights reserved.</p>
+        <p class="footer-tagline">Crafted with Angular & TypeScript</p>
+      </div>
+    </div>
+  </footer>
+</div>
