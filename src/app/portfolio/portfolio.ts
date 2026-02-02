@@ -1,15 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './portfolio.html',
   styleUrls: ['./portfolio.css']
 })
 export class Portfolio {
   activeSection = 'about';
+  contactForm: FormGroup;
+  submitted = false;
+  success = false;
   
   projects = [
     {
@@ -73,7 +77,43 @@ export class Portfolio {
   currentYear = new Date().getFullYear();
   yearsExperience = this.currentYear - 2019;
 
+  constructor(private fb: FormBuilder) {
+    this.contactForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(2)]],
+      email: ['', [Validators.required, Validators.email]],
+      subject: ['', [Validators.required, Validators.minLength(5)]],
+      message: ['', [Validators.required, Validators.minLength(10)]]
+    });
+  }
+
+  get f() {
+    return this.contactForm.controls;
+  }
+
   setActiveSection(section: string): void {
     this.activeSection = section;
+    // Scroll to top when changing sections
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  onSubmit(): void {
+    this.submitted = true;
+
+    if (this.contactForm.invalid) {
+      return;
+    }
+
+    // Here you would typically send the data to your backend
+    console.log('Form Data:', this.contactForm.value);
+    
+    // Simulate successful submission
+    this.success = true;
+    
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      this.contactForm.reset();
+      this.submitted = false;
+      this.success = false;
+    }, 3000);
   }
 }
