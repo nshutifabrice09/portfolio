@@ -140,7 +140,7 @@ export class Portfolio {
         from_email: this.contactForm.value.email,
         subject: this.contactForm.value.subject,
         message: this.contactForm.value.message,
-        to_email: 'nshuti.fabrice09@gmail.com' // Your email
+        to_email: 'niyonzimanshuti@outlook.com' // Your email
       };
 
       console.log('Template Params:', templateParams);
