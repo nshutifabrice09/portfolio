@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-portfolio',
@@ -14,6 +15,8 @@ export class Portfolio {
   contactForm: FormGroup;
   submitted = false;
   success = false;
+  error = false;
+  sending = false;
   
   projects = [
     {
@@ -77,6 +80,13 @@ export class Portfolio {
   currentYear = new Date().getFullYear();
   yearsExperience = this.currentYear - 2019;
 
+  // EmailJS Configuration - REPLACE THESE WITH YOUR ACTUAL VALUES
+  private emailJSConfig = {
+    serviceID: 'YOUR_SERVICE_ID',      // Replace with your Service ID
+    templateID: 'YOUR_TEMPLATE_ID',    // Replace with your Template ID
+    publicKey: 'YOUR_PUBLIC_KEY'       // Replace with your Public Key
+  };
+
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(2)]],
@@ -92,28 +102,54 @@ export class Portfolio {
 
   setActiveSection(section: string): void {
     this.activeSection = section;
-    // Scroll to top when changing sections
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  onSubmit(): void {
+  async onSubmit(): Promise<void> {
     this.submitted = true;
+    this.error = false;
+    this.success = false;
 
     if (this.contactForm.invalid) {
       return;
     }
 
-    // Here you would typically send the data to your backend
-    console.log('Form Data:', this.contactForm.value);
-    
-    // Simulate successful submission
-    this.success = true;
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      this.contactForm.reset();
-      this.submitted = false;
-      this.success = false;
-    }, 3000);
+    this.sending = true;
+
+    try {
+      // Prepare template parameters
+      const templateParams = {
+        from_name: this.contactForm.value.name,
+        from_email: this.contactForm.value.email,
+        subject: this.contactForm.value.subject,
+        message: this.contactForm.value.message
+      };
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        this.emailJSConfig.serviceID,
+        this.emailJSConfig.templateID,
+        templateParams,
+        this.emailJSConfig.publicKey
+      );
+
+      console.log('Email sent successfully!', response);
+      
+      // Show success message
+      this.success = true;
+      this.sending = false;
+      
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        this.contactForm.reset();
+        this.submitted = false;
+        this.success = false;
+      }, 3000);
+
+    } catch (error) {
+      console.error('Email sending failed:', error);
+      this.error = true;
+      this.sending = false;
+    }
   }
 }
