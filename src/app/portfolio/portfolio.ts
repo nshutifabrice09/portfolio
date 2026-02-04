@@ -82,9 +82,9 @@ export class Portfolio {
 
   // EmailJS Configuration - REPLACE THESE WITH YOUR ACTUAL VALUES
   private emailJSConfig = {
-    serviceID: 'YOUR_SERVICE_ID',      // Replace with your Service ID
-    templateID: 'YOUR_TEMPLATE_ID',    // Replace with your Template ID
-    publicKey: 'YOUR_PUBLIC_KEY'       // Replace with your Public Key
+    serviceID: 'service_xmx86xn',      // Replace with your Service ID
+    templateID: 'template_niuaaq9',    // Replace with your Template ID
+    publicKey: 'nJNRFnnODkQm_mDiH'       // Replace with your Public Key
   };
 
   constructor(private fb: FormBuilder) {

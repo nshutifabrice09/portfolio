@@ -202,7 +202,19 @@
               <textarea id="message" name="message" rows="5" required></textarea>
             </div>
             
-            <button type="submit" class="btn-primary">Send Message</button>
+            <button type="submit" class="btn-submit" [disabled]="sending || (submitted && contactForm.invalid)">
+              <span *ngIf="!success && !sending">Send Message</span>
+              <span *ngIf="sending">Sending...</span>
+              <span *ngIf="success">✓ Message Sent!</span>
+            </button>
+
+            <div class="success-message" *ngIf="success">
+              ✓ Thank you for your message! I'll get back to you soon.
+            </div>
+
+            <div class="error-message-box" *ngIf="error">
+              ✗ Failed to send message. Please try again or email me directly.
+            </div>
           </form>
         </div>
       </div>
