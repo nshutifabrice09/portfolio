@@ -877,8 +877,8 @@ a.contact-value:hover {
 }
 
 .btn-submit:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+  opacity: 0.7;
+  cursor: wait;
 }
 
 .success-message {
