@@ -17,6 +17,7 @@ export class Portfolio {
   success = false;
   error = false;
   sending = false;
+  errorMessage = '';
   
   projects = [
     {
@@ -80,11 +81,11 @@ export class Portfolio {
   currentYear = new Date().getFullYear();
   yearsExperience = this.currentYear - 2019;
 
-  // EmailJS Configuration - REPLACE THESE WITH YOUR ACTUAL VALUES
+  // EmailJS Configuration
   private emailJSConfig = {
-    serviceID: 'service_xmx86xn',      // Replace with your Service ID
-    templateID: 'template_niuaaq9',    // Replace with your Template ID
-    publicKey: 'nJNRFnnODkQm_mDiH'       // Replace with your Public Key
+    serviceID: 'service_xmx86xn',
+    templateID: 'template_niuaaq9',
+    publicKey: 'nJNRFnnODkQm_mDiH'
   };
 
   constructor(private fb: FormBuilder) {
@@ -94,6 +95,9 @@ export class Portfolio {
       subject: ['', [Validators.required, Validators.minLength(5)]],
       message: ['', [Validators.required, Validators.minLength(10)]]
     });
+
+    // Initialize EmailJS with your public key
+    emailjs.init(this.emailJSConfig.publicKey);
   }
 
   get f() {
@@ -109,12 +113,25 @@ export class Portfolio {
     this.submitted = true;
     this.error = false;
     this.success = false;
+    this.errorMessage = '';
+
+    console.log('=== FORM SUBMISSION START ===');
+    console.log('Form Valid?', this.contactForm.valid);
+    console.log('Form Values:', this.contactForm.value);
 
     if (this.contactForm.invalid) {
+      console.log('Form is invalid, stopping.');
+      Object.keys(this.contactForm.controls).forEach(key => {
+        const control = this.contactForm.get(key);
+        if (control?.invalid) {
+          console.log(`${key} is invalid:`, control.errors);
+        }
+      });
       return;
     }
 
     this.sending = true;
+    console.log('Starting email send...');
 
     try {
       // Prepare template parameters
@@ -122,34 +139,55 @@ export class Portfolio {
         from_name: this.contactForm.value.name,
         from_email: this.contactForm.value.email,
         subject: this.contactForm.value.subject,
-        message: this.contactForm.value.message
+        message: this.contactForm.value.message,
+        to_email: 'nshuti.fabrice09@gmail.com' // Your email
       };
+
+      console.log('Template Params:', templateParams);
+      console.log('Service ID:', this.emailJSConfig.serviceID);
+      console.log('Template ID:', this.emailJSConfig.templateID);
 
       // Send email using EmailJS
       const response = await emailjs.send(
         this.emailJSConfig.serviceID,
         this.emailJSConfig.templateID,
-        templateParams,
-        this.emailJSConfig.publicKey
+        templateParams
       );
 
-      console.log('Email sent successfully!', response);
+      console.log('✅ SUCCESS! Email sent:', response);
+      console.log('Response status:', response.status);
+      console.log('Response text:', response.text);
       
       // Show success message
       this.success = true;
       this.sending = false;
       
-      // Reset form after 3 seconds
+      // Reset form after 4 seconds
       setTimeout(() => {
         this.contactForm.reset();
         this.submitted = false;
         this.success = false;
-      }, 3000);
+      }, 4000);
 
-    } catch (error) {
-      console.error('Email sending failed:', error);
+    } catch (error: any) {
+      console.error('❌ ERROR! Email sending failed:', error);
+      console.error('Error details:', {
+        status: error?.status,
+        text: error?.text,
+        message: error?.message
+      });
+      
       this.error = true;
       this.sending = false;
+      
+      // Set user-friendly error message
+      if (error?.text) {
+        this.errorMessage = `Error: ${error.text}`;
+      } else if (error?.message) {
+        this.errorMessage = `Error: ${error.message}`;
+      } else {
+        this.errorMessage = 'Failed to send message. Please try again or email me directly at nshuti.fabrice09@gmail.com';
+      }
     }
   }
 }
