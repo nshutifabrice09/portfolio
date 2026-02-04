@@ -51,10 +51,11 @@ export class Portfolio {
   ];
 
   skills = [
-    { category: "Frontend", items: ["Angular", "TypeScript", "RxJS", "NgRx", "HTML5", "CSS3", "SASS"] },
-    { category: "Backend", items: ["Node.js", "Express", "NestJS", "REST APIs", "GraphQL"] },
-    { category: "Database", items: ["MongoDB", "PostgreSQL", "Firebase", "MySQL"] },
-    { category: "Tools", items: ["Git", "Docker", "Jenkins", "AWS", "Azure"] }
+    { category: "Programming Languages", items: ["Java", "Python", "JavaScript", "C/C++"]},
+    { category: "Frameworks", items: ["Spring Boot", "Nest.js", "Django", "Angular"]},
+    { category: "Databases", items: ["PostgreSQL", "MongoDB", "Firebase", "MySQL"]},
+    { category: "Cloud Tools and Platforms", items: ["Docker", "AWS", "DigitalOcean"]},
+    { category: "DevOps Appliance", items: ["Git Bash", "GitHub Actions", "Linux/Shell Scripting", "Postman"]},
   ];
 
   experience = [
