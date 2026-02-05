@@ -11,7 +11,6 @@ import emailjs from '@emailjs/browser';
   styleUrls: ['./portfolio.css']
 })
 export class Portfolio {
-  activeSection = 'about';
   contactForm: FormGroup;
   submitted = false;
   success = false;
@@ -82,7 +81,6 @@ export class Portfolio {
   currentYear = new Date().getFullYear();
   yearsExperience = this.currentYear - 2019;
 
-  // EmailJS Configuration
   private emailJSConfig = {
     serviceID: 'service_xmx86xn',
     templateID: 'template_niuaaq9',
@@ -97,17 +95,11 @@ export class Portfolio {
       message: ['', [Validators.required, Validators.minLength(10)]]
     });
 
-    // Initialize EmailJS with your public key
     emailjs.init(this.emailJSConfig.publicKey);
   }
 
   get f() {
     return this.contactForm.controls;
-  }
-
-  setActiveSection(section: string): void {
-    this.activeSection = section;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   async onSubmit(): Promise<void> {
@@ -116,54 +108,31 @@ export class Portfolio {
     this.success = false;
     this.errorMessage = '';
 
-    console.log('=== FORM SUBMISSION START ===');
-    console.log('Form Valid?', this.contactForm.valid);
-    console.log('Form Values:', this.contactForm.value);
-
     if (this.contactForm.invalid) {
-      console.log('Form is invalid, stopping.');
-      Object.keys(this.contactForm.controls).forEach(key => {
-        const control = this.contactForm.get(key);
-        if (control?.invalid) {
-          console.log(`${key} is invalid:`, control.errors);
-        }
-      });
       return;
     }
 
     this.sending = true;
-    console.log('Starting email send...');
 
     try {
-      // Prepare template parameters
       const templateParams = {
         from_name: this.contactForm.value.name,
         from_email: this.contactForm.value.email,
         subject: this.contactForm.value.subject,
-        message: this.contactForm.value.message,
-        to_email: 'niyonzimanshuti@outlook.com' // Your email
+        message: this.contactForm.value.message
       };
 
-      console.log('Template Params:', templateParams);
-      console.log('Service ID:', this.emailJSConfig.serviceID);
-      console.log('Template ID:', this.emailJSConfig.templateID);
-
-      // Send email using EmailJS
       const response = await emailjs.send(
         this.emailJSConfig.serviceID,
         this.emailJSConfig.templateID,
         templateParams
       );
 
-      console.log('✅ SUCCESS! Email sent:', response);
-      console.log('Response status:', response.status);
-      console.log('Response text:', response.text);
+      console.log('✅ Email sent successfully!', response);
       
-      // Show success message
       this.success = true;
       this.sending = false;
       
-      // Reset form after 4 seconds
       setTimeout(() => {
         this.contactForm.reset();
         this.submitted = false;
@@ -171,24 +140,10 @@ export class Portfolio {
       }, 4000);
 
     } catch (error: any) {
-      console.error('❌ ERROR! Email sending failed:', error);
-      console.error('Error details:', {
-        status: error?.status,
-        text: error?.text,
-        message: error?.message
-      });
-      
+      console.error('❌ Email failed:', error);
       this.error = true;
       this.sending = false;
-      
-      // Set user-friendly error message
-      if (error?.text) {
-        this.errorMessage = `Error: ${error.text}`;
-      } else if (error?.message) {
-        this.errorMessage = `Error: ${error.message}`;
-      } else {
-        this.errorMessage = 'Failed to send message. Please try again or email me directly at nshuti.fabrice09@gmail.com';
-      }
+      this.errorMessage = 'Failed to send message. Please try again or email me directly.';
     }
   }
 }
