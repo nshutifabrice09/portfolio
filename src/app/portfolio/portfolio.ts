@@ -38,12 +38,12 @@ export class Portfolio {
       tech: "Spring Boot, PostgreSQL. Postman, Angular, TypeScript, JavaScript.",
       description: "A blockchain-enabled system that tracks produce from farm to table, verifying eco-friendly practices and fair labor use.",
       year: "2024",
-      link: "https://github.com/yourusername/project3"
+      link: "https://github.com/nshutifabrice09/sustainable-food-tracker-backend"
     },
     {
       title: "Tera Imbere",
       tech: "Spring Boot, PostgreSQL. Postman, Angular, TypeScript, JavaScript",
-      description: "Collaborative project management tool with real-time updates",
+      description: "Tera Imbere is a user-friendly, secure, and efficient banking system designed to streamline the management of personal and small business finances.",
       year: "2023",
       link: "https://github.com/nshutifabrice09/Tera-imbere-spring-boot"
     },
