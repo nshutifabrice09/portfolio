@@ -59,27 +59,27 @@ export class Portfolio {
 
   experience = [
     {
-      role: "Senior Frontend Developer",
-      company: "Tech Company",
-      period: "2022 - Present",
-      description: "Leading development of enterprise Angular applications, mentoring junior developers"
+      role: "DevOps Engineer",
+      company: "Qudra Solution Ltd",
+      period: "2025 - Present",
+      description: "Managed cloud infrastructure and streamlined CI/CD workflows."
     },
     {
-      role: "Frontend Developer",
-      company: "Digital Agency",
-      period: "2020 - 2022",
-      description: "Built responsive web applications and improved performance by 40%"
+      role: "AI Engineer & System Design",
+      company: "RWAiGHT",
+      period: "2023 - 2025",
+      description: "Engineered scalable AI systems and optimized system performance."
     },
     {
-      role: "Junior Developer",
-      company: "Startup Inc",
-      period: "2019 - 2020",
-      description: "Developed features for SaaS platform using Angular and TypeScript"
+      role: "Python Junior Developer Intern",
+      company: "HYO Group",
+      period: "2022 - 2023",
+      description: "Developed features for SaaS platform using Angular and TypeScript."
     }
   ];
 
   currentYear = new Date().getFullYear();
-  yearsExperience = this.currentYear - 2019;
+  yearsExperience = this.currentYear - 2022;
 
   private emailJSConfig = {
     serviceID: 'service_xmx86xn',
