@@ -23,29 +23,36 @@ export class Portfolio {
       title: "Ihumure",
       tech: "Spring Boot, PostgreSQL, Postman, Angular, TypeScript, RxJS",
       description: "A digital mental health platform designed to provide accessible support, community engagement, and wellness resources for users.",
-      year: "2024",
+      year: "2026",
       link: "https://github.com/nshutifabrice09/isoko-ry-ubumenyi-frontend"
     },
     {
       title: "Isoko ry' Ubumenyi",
-      tech: "Spring Boot, PostgreSQL. Postman, Angular, TypeScript, JavaScript",
+      tech: "Spring Boot, PostgreSQL. Postman, Angular, TypeScript, JavaScript.",
       description: "Isoko ry’Ubumenyi is a modern E-Learning Platform built with Spring Boot, designed to be a digital source of knowledge for students, instructors, and administrators.",
-      year: "2024",
+      year: "2025",
       link: "https://isoko-ry-ubumenyi-frontend.vercel.app/"
     },
     {
-      title: "Mobile Banking App",
-      tech: "Ionic, Angular, Firebase",
-      description: "Secure financial management application with biometric authentication",
-      year: "2023",
+      title: "Sustainable Food Tracker",
+      tech: "Spring Boot, PostgreSQL. Postman, Angular, TypeScript, JavaScript.",
+      description: "A blockchain-enabled system that tracks produce from farm to table, verifying eco-friendly practices and fair labor use.",
+      year: "2024",
       link: "https://github.com/yourusername/project3"
     },
     {
-      title: "Task Management System",
-      tech: "Angular, NgRx, Node.js",
+      title: "Tera Imbere",
+      tech: "Spring Boot, PostgreSQL. Postman, Angular, TypeScript, JavaScript",
       description: "Collaborative project management tool with real-time updates",
       year: "2023",
-      link: "https://github.com/yourusername/project4"
+      link: "https://github.com/nshutifabrice09/Tera-imbere-spring-boot"
+    },
+    {
+      title: "SmartGrid Hub",
+      tech: "Spring Boot, PostgreSQL. Postman, Angular, TypeScript, JavaScript",
+      description: "A full-stack software platform designed to help communities manage, optimize, and trade renewable energy locally.",
+      year: "2022",
+      link: "https://github.com/nshutifabrice09/SmartGridHub-backend-spring-boot"
     }
   ];
 
