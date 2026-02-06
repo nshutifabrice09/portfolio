@@ -20,18 +20,18 @@ export class Portfolio {
   
   projects = [
     {
-      title: "E-Commerce Platform",
-      tech: "Angular, TypeScript, RxJS",
-      description: "Full-stack shopping experience with real-time inventory management and payment integration",
+      title: "Ihumure",
+      tech: "Spring Boot, PostgreSQL, Postman, Angular, TypeScript, RxJS",
+      description: "Digital Mental Health and Community Support Platform.",
       year: "2024",
       link: "https://github.com/yourusername/project1"
     },
     {
-      title: "Analytics Dashboard",
-      tech: "Angular, D3.js, Material",
+      title: "Isoko ry' Ubumenyi",
+      tech: "Spring Boot, PostgreSQL. Postman, Angular, TypeScript, JavaScript",
       description: "Interactive data visualization dashboard for enterprise metrics and KPIs",
       year: "2024",
-      link: "https://github.com/yourusername/project2"
+      link: "https://isoko-ry-ubumenyi-frontend.vercel.app/"
     },
     {
       title: "Mobile Banking App",
