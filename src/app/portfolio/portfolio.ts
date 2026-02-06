@@ -74,12 +74,12 @@ export class Portfolio {
       role: "Python Junior Developer Intern",
       company: "HYO Group",
       period: "2022 - 2023",
-      description: "Developed features for SaaS platform using Angular and TypeScript."
+      description: "Contributed to SaaS development using Python and web technologies."
     }
   ];
 
   currentYear = new Date().getFullYear();
-  yearsExperience = this.currentYear - 2022;
+  yearsExperience = this.currentYear - 2023;
 
   private emailJSConfig = {
     serviceID: 'service_xmx86xn',
