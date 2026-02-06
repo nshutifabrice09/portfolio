@@ -22,14 +22,14 @@ export class Portfolio {
     {
       title: "Ihumure",
       tech: "Spring Boot, PostgreSQL, Postman, Angular, TypeScript, RxJS",
-      description: "Digital Mental Health and Community Support Platform.",
+      description: "A digital mental health platform designed to provide accessible support, community engagement, and wellness resources for users.",
       year: "2024",
-      link: "https://github.com/yourusername/project1"
+      link: "https://github.com/nshutifabrice09/isoko-ry-ubumenyi-frontend"
     },
     {
       title: "Isoko ry' Ubumenyi",
       tech: "Spring Boot, PostgreSQL. Postman, Angular, TypeScript, JavaScript",
-      description: "Interactive data visualization dashboard for enterprise metrics and KPIs",
+      description: "Isoko ry’Ubumenyi is a modern E-Learning Platform built with Spring Boot, designed to be a digital source of knowledge for students, instructors, and administrators.",
       year: "2024",
       link: "https://isoko-ry-ubumenyi-frontend.vercel.app/"
     },
