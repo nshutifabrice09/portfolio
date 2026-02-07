@@ -21,35 +21,35 @@ export class Portfolio {
   projects = [
     {
       title: "Ihumure",
-      tech: "Spring Boot, PostgreSQL, Postman, Angular, TypeScript, RxJS",
+      tech: "Spring Boot, PostgreSQL, Postman, Docker, Vercel, Angular, TypeScript, RxJS",
       description: "A digital mental health platform designed to provide accessible support, community engagement, and wellness resources for users.",
       year: "2026",
       link: "https://github.com/nshutifabrice09/isoko-ry-ubumenyi-frontend"
     },
     {
       title: "Isoko ry' Ubumenyi",
-      tech: "Spring Boot, PostgreSQL. Postman, Angular, TypeScript, JavaScript.",
+      tech: "Spring Boot, PostgreSQL. Postman, Docker, Vercel, Angular, TypeScript, JavaScript.",
       description: "Isoko ry’Ubumenyi is a modern E-Learning Platform built with Spring Boot, designed to be a digital source of knowledge for students, instructors, and administrators.",
       year: "2025",
       link: "https://isoko-ry-ubumenyi-frontend.vercel.app/"
     },
     {
       title: "Sustainable Food Tracker",
-      tech: "Spring Boot, PostgreSQL. Postman, Angular, TypeScript, JavaScript.",
+      tech: "Spring Boot, PostgreSQL. Postman, Docker, Vercel, Angular, TypeScript, JavaScript.",
       description: "A blockchain-enabled system that tracks produce from farm to table, verifying eco-friendly practices and fair labor use.",
       year: "2024",
       link: "https://github.com/nshutifabrice09/sustainable-food-tracker-backend"
     },
     {
       title: "Tera Imbere",
-      tech: "Spring Boot, PostgreSQL. Postman, Angular, TypeScript, JavaScript",
+      tech: "Spring Boot, PostgreSQL. Postman, Docker, Vercel, Angular, TypeScript, JavaScript",
       description: "Tera Imbere is a user-friendly, secure, and efficient banking system designed to streamline the management of personal and small business finances.",
       year: "2023",
       link: "https://github.com/nshutifabrice09/Tera-imbere-spring-boot"
     },
     {
       title: "SmartGrid Hub",
-      tech: "Spring Boot, PostgreSQL. Postman, Angular, TypeScript, JavaScript",
+      tech: "Spring Boot, PostgreSQL. Postman, Docker, Vercel, Angular, TypeScript, JavaScript",
       description: "A full-stack software platform designed to help communities manage, optimize, and trade renewable energy locally.",
       year: "2022",
       link: "https://github.com/nshutifabrice09/SmartGridHub-backend-spring-boot"
