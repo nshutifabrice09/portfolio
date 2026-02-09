@@ -20,8 +20,8 @@ export class Portfolio {
   
   projects = [
     {
-      title: "Ihumure",
-      tech: "Spring Boot, PostgreSQL, Postman, Docker, Vercel, Angular, TypeScript, RxJS",
+      title: "GCBUILDS",
+      tech: "DigitalOcean, VPS, GitHub Action, CI/CD Pipeline, Docker",
       description: "A digital mental health platform designed to provide accessible support, community engagement, and wellness resources for users.",
       year: "2026",
       link: "https://github.com/nshutifabrice09/isoko-ry-ubumenyi-frontend"
