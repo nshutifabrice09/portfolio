@@ -91,6 +91,7 @@ export class Portfolio {
   private emailJSConfig = {
     serviceID: 'service_xmx86xn',
     templateID: 'template_niuaaq9',
+    autoReplyTemplateID: 'template_br2zbny',
     publicKey: 'nJNRFnnODkQm_mDiH'
   };
 
