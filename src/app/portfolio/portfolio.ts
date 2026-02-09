@@ -21,10 +21,10 @@ export class Portfolio {
   projects = [
     {
       title: "GCBUILDS",
-      tech: "DigitalOcean, VPS, GitHub Action, CI/CD Pipeline, Docker",
-      description: "A digital mental health platform designed to provide accessible support, community engagement, and wellness resources for users.",
+      tech: "DigitalOcean, VPS, Truehost Domain Registrar, GitHub Action, CI/CD Pipeline, Docker",
+      description: "Qudra is your unified platform managing the complete construction-to-occupancy lifecycle. From project management to sales, rentals, and beyond.",
       year: "2026",
-      link: "https://github.com/nshutifabrice09/isoko-ry-ubumenyi-frontend"
+      link: "https://gcbuilds.io/"
     },
     {
       title: "Isoko ry' Ubumenyi",
