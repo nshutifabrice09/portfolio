@@ -60,7 +60,7 @@ export class Portfolio {
     { category: "Programming Languages", items: ["Java", "Python", "JavaScript", "C/C++"]},
     { category: "Frameworks", items: ["Spring Boot", "Nest.js", "Django", "Angular"]},
     { category: "Databases", items: ["PostgreSQL", "MongoDB", "Firebase", "MySQL"]},
-    { category: "Cloud Tools and Platforms", items: ["Docker", "AWS", "DigitalOcean"]},
+    { category: "Cloud Tools and Platforms", items: ["Docker", "AWS", "DigitalOcean", "Grafana"]},
     { category: "DevOps Appliance", items: ["Git Bash", "GitHub Actions", "Linux/Shell Scripting", "Postman"]},
   ];
 
