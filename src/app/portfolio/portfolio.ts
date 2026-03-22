@@ -38,14 +38,14 @@ export class Portfolio {
       tech: "Spring Boot, PostgreSQL. Postman, Docker, Vercel, Angular, TypeScript, JavaScript.",
       description: "A blockchain-enabled system that tracks produce from farm to table, verifying eco-friendly practices and fair labor use.",
       year: "2024",
-      link: "https://github.com/nshutifabrice09/sustainable-food-tracker-backend"
+      link: "https://sustainablefoodtracking.vercel.app/"
     },
     {
       title: "Tera Imbere",
       tech: "Spring Boot, PostgreSQL. Postman, Docker, Vercel, Angular, TypeScript, JavaScript",
       description: "Tera Imbere is a user-friendly, secure, and efficient banking system designed to streamline the management of personal and small business finances.",
       year: "2023",
-      link: "https://github.com/nshutifabrice09/Tera-imbere-spring-boot"
+      link: "https://tera-imbere.vercel.app/dashboard"
     },
     {
       title: "SmartGrid Hub",
