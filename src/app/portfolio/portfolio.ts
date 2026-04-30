@@ -67,7 +67,7 @@ export class Portfolio {
   experience = [
     {
       role: "DevOps Engineer",
-      company: "Qudra Solution Ltd",
+      company: "GC Builds",
       period: "2025 - Present",
       description: "Managed cloud infrastructure and streamlined CI/CD workflows."
     },
