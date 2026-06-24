@@ -74,7 +74,11 @@ export class Portfolio {
   experience = [
     {
       role: "DevOps Engineer",
+<<<<<<< HEAD
       company: "GC Technologies Ltd",
+=======
+      company: "GC Builds",
+>>>>>>> 358e19b4070030891bb21dc4b65f3c462b99ce00
       period: "2025 - Present",
       description: "Manage cloud infrastructure and streamlined CI/CD workflows."
     },
