@@ -64,11 +64,14 @@ export class Portfolio {
   ];
 
   skills = [
-    { category: "Programming Languages", items: ["Java", "Python", "JavaScript", "C/C++"]},
-    { category: "Frameworks", items: ["Spring Boot", "Nest.js", "Django", "Angular"]},
+    { category: "Programming Languages", items: ["Java", "Python", "JavaScript", "C++"]},
+    { category: "Operating Systems", items: ["Ubuntu", "Red Hat Enterprise Linux", "AlmaLinux"]},
+    { category: "Cloud Infrastructure", items: ["AWS", "Microsoft Azure", "DigitalOcean", "Terraform", "Cloudflare"]},
+    { category: "Container & Orchestration", items: ["Docker", "Kubernetes"]},
+    { category: "CI/C Automation", items: ["GitHUb Actions", "Jenkins", "GitLab CI/CD", "Ansible"]},
+    { category: "Monitoring & Observability", items: ["Prometheus", "Grafana", "ELK Stack", "Loki", "Netdata"]},
     { category: "Databases", items: ["PostgreSQL", "MongoDB", "Firebase", "MySQL"]},
-    { category: "Cloud Tools and Platforms", items: ["Docker", "AWS", "DigitalOcean", "Grafana"]},
-    { category: "DevOps Appliance", items: ["Git Bash", "GitHub Actions", "Linux/Shell Scripting", "Postman"]},
+    { category: "Framework Technologies", items: ["SPring Boot", "Django", "NestJS", "Angular"]},
   ];
 
   experience = [
