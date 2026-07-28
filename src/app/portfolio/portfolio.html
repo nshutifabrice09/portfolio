@@ -19,7 +19,7 @@
   <header class="hero" id="hero">
     <div class="hero-content">
       <h1 class="hero-title">
-        Transforming Ideas Into 
+        Transforming Ideas Into
         <span class="highlight">Scalable Digital Platforms</span>
       </h1>
       <p class="hero-description">
@@ -43,22 +43,22 @@
             <span>Available for work</span>
           </div>
         </div>
-        
+
         <div class="about-content">
           <h2 class="section-title">About Me</h2>
           <div class="about-text">
             <p>
-              I am an adaptable IT professional and software engineer with a strong foundation in full-stack development, 
-              specializing in backend systems, system optimization, and process improvement. 
+              I am an adaptable IT professional and software engineer with a strong foundation in full-stack development,
+              specializing in backend systems, system optimization, and process improvement.
               I hold a Bachelor’s degree in Software Engineering from Adventist University of Central Africa.
             </p>
             <p>
-              My experience includes designing, developing, and maintaining scalable backend services alongside 
+              My experience includes designing, developing, and maintaining scalable backend services alongside
               building and integrating user-focused frontend components.
             </p>
             <p>
               I apply analytical thinking and technology-driven solutions to improve operational efficiency and support
-               effective cross-functional collaboration within complex supply chain environments, 
+               effective cross-functional collaboration within complex supply chain environments,
                while continuously advancing toward a technology leadership role.
             </p>
           </div>
@@ -147,10 +147,10 @@
         <!-- Contact Information -->
         <div class="contact-info">
           <p class="contact-intro">
-            I'm always interested in hearing about new projects and opportunities. 
+            I'm always interested in hearing about new projects and opportunities.
             Whether you have a question or just want to say hi, feel free to reach out!
           </p>
-          
+
           <div class="contact-methods">
             <div class="contact-method">
               <div class="contact-icon">
@@ -210,8 +210,17 @@
                 </svg>
                 <span>LinkedIn</span>
               </a>
+              <a href="/resume/Fabrice-Niyonzima-Resume.pdf" target="_blank" class="social-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10z"></path>
+                  <polyline points="14 2 14 10 22 10"></polyline>
+                  <line x1="12" y1="19" x2="12" y2="5"></line>
+                  <line x1="9" y1="16" x2="15" y2="16"></line>
+                </svg>
+                <span>Resume</span>
+              </a>
             </div>
-          </div>
+</div>
         </div>
 
         <!-- Contact Form -->
@@ -219,9 +228,9 @@
           <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
             <div class="form-group">
               <label for="name">Full Name *</label>
-              <input 
-                type="text" 
-                id="name" 
+              <input
+                type="text"
+                id="name"
                 formControlName="name"
                 [class.invalid]="submitted && f['name'].errors"
                 placeholder="full name"
@@ -234,9 +243,9 @@
 
             <div class="form-group">
               <label for="email">Email Address *</label>
-              <input 
-                type="email" 
-                id="email" 
+              <input
+                type="email"
+                id="email"
                 formControlName="email"
                 [class.invalid]="submitted && f['email'].errors"
                 placeholder="email"
@@ -249,9 +258,9 @@
 
             <div class="form-group">
               <label for="subject">Subject *</label>
-              <input 
-                type="text" 
-                id="subject" 
+              <input
+                type="text"
+                id="subject"
                 formControlName="subject"
                 [class.invalid]="submitted && f['subject'].errors"
                 placeholder="Project Inquiry"
@@ -264,8 +273,8 @@
 
             <div class="form-group">
               <label for="message">Message *</label>
-              <textarea 
-                id="message" 
+              <textarea
+                id="message"
                 formControlName="message"
                 [class.invalid]="submitted && f['message'].errors"
                 rows="6"
