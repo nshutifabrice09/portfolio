@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import emailjs from '@emailjs/browser';
@@ -12,11 +12,11 @@ import emailjs from '@emailjs/browser';
 })
 export class Portfolio {
   contactForm: FormGroup;
-  submitted = false;
-  success = false;
-  error = false;
-  sending = false;
-  errorMessage = '';
+  submitted = signal(false);
+  success = signal(false);
+  error = signal(false);
+  sending = signal(false);
+  errorMessage = signal('');
   
   projects = [
     {
@@ -76,9 +76,15 @@ export class Portfolio {
 
   experience = [
     {
+      role: "DevOps & Full Stack Software Engineer",
+      company: "Ijambo",
+      period: "May 2026 - Present",
+      description: "Build and deploy full stack features while managing cloud infrastructure, CI/CD pipelines, and monitoring."
+    },
+    {
       role: "DevOps Engineer",
       company: "GC Technologies Ltd",
-      period: "2025 - Present",
+      period: "2025 - 2026",
       description: "Manage cloud infrastructure and streamlined CI/CD workflows."
     },
     {
@@ -96,7 +102,7 @@ export class Portfolio {
   ];
 
   currentYear = new Date().getFullYear();
-  yearsExperience = this.currentYear - 2023;
+  yearsExperience = this.currentYear - 2022;
 
   private emailJSConfig = {
     serviceID: 'service_xmx86xn',
@@ -121,16 +127,16 @@ export class Portfolio {
   }
 
   async onSubmit(): Promise<void> {
-    this.submitted = true;
-    this.error = false;
-    this.success = false;
-    this.errorMessage = '';
+    this.submitted.set(true);
+    this.error.set(false);
+    this.success.set(false);
+    this.errorMessage.set('');
 
     if (this.contactForm.invalid) {
       return;
     }
 
-    this.sending = true;
+    this.sending.set(true);
 
     try {
       const templateParams = {
@@ -148,20 +154,20 @@ export class Portfolio {
 
       console.log('✅ Email sent successfully!', response);
       
-      this.success = true;
-      this.sending = false;
+      this.success.set(true);
+      this.sending.set(false);
       
       setTimeout(() => {
         this.contactForm.reset();
-        this.submitted = false;
-        this.success = false;
+        this.submitted.set(false);
+        this.success.set(false);
       }, 4000);
 
     } catch (error: any) {
       console.error('❌ Email failed:', error);
-      this.error = true;
-      this.sending = false;
-      this.errorMessage = 'Failed to send message. Please try again or email me directly.';
+      this.error.set(true);
+      this.sending.set(false);
+      this.errorMessage.set('Failed to send message. Please try again or email me directly.');
     }
   }
 }

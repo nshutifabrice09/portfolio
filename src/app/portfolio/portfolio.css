@@ -250,6 +250,7 @@ html {
   height: 380px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 20%;
   border: 8px solid var(--primary-color);
   box-shadow: var(--shadow-lg);
   margin-bottom: 1.5rem;
