@@ -17,11 +17,18 @@ export class Portfolio {
   error = signal(false);
   sending = signal(false);
   errorMessage = signal('');
-  
+
   projects = [
     {
+      title: "HuzaMed",
+      tech: "NestJs, NextJs, PostgreSQL, Kubernetes, Docker, Terraform, MVPS.net VPS Hosting, GitHub Actions, CI/CD Pipeline, Nginx, Netdata, ",
+      description: "A digital platform for Rwanda’s health sector. HuzaMed is a verified directory that connects medical professionals, health facilities and commercial partners.",
+      year: "2026",
+      link: "https://huzamed.com/"
+    },
+    {
       title: "Ijambo",
-      tech: "Python Django, PostgreSQL, Docker, MVPS.net VPS Hosting,GitHub Actions, DigitalOcean, Nginx, Netdata, ",
+      tech: "Python Django, PostgreSQL,Kubernetes, Terraform, Docker, MVPS.net VPS Hosting,GitHub Actions,CI/CD Pipeline, Nginx, Netdata, ",
       description: "An interactive gaming platform that engages players through trivia challenges, leaderboards, and seamless online gameplay powered by modern cloud infrastructure.",
       year: "2026",
       link: "https://ijambo.rw/"
@@ -153,10 +160,10 @@ export class Portfolio {
       );
 
       console.log('✅ Email sent successfully!', response);
-      
+
       this.success.set(true);
       this.sending.set(false);
-      
+
       setTimeout(() => {
         this.contactForm.reset();
         this.submitted.set(false);
